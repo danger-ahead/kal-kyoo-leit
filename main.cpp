@@ -1,27 +1,23 @@
-#include <stdio.h>
 #include <iostream>
-#include "AboutMe.h"
+#include "printer.h"
+#include "operate.h"
+
 using namespace std;
 
 int main(){
-    printf(" _____________________\n"
-           "|               CASIO |\n"
-           "|  _________________  |\n"
-           "| |     WELCOME     | |\n"
-           "| |_________________| |\n"
-           "|  ___ ___ ___   ___  |\n"
-           "| | 7 | 8 | 9 | | + | |\n"
-           "| |___|___|___| |___| |\n"
-           "| | 4 | 5 | 6 | | - | |\n"
-           "| |___|___|___| |___| |\n"
-           "| | 1 | 2 | 3 | | x | |\n"
-           "| |___|___|___| |___| |\n"
-           "| | . | 0 | = | | / | |\n"
-           "| |___|___|___| |___| |\n"
-           "|_____________________|\n");
 
-    AboutMe AM;
-    AM.display();
+    printer pr;
+    pr.printWelcome();
+
+    string s,s2="?";
+    cin>>s;
+    cout<<"\n";
+    if(s == s2)
+        pr.help();
+    else{
+        operate op;
+        cout<<op.evaluate(s)<<"\n";
+    }
 
     return 0;
 }

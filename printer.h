@@ -7,8 +7,9 @@
 using namespace std;
 
 
-class AboutMe
+class printer
 {
 public:
-    void display();
+    void help();
+    void printWelcome();
 };

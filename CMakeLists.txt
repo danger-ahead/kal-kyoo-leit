@@ -4,4 +4,4 @@ project(calculate)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(calculate
-        main.cpp AboutMe.cpp AboutMe.h)
+        main.cpp printer.cpp printer.h operate.cpp operate.h)
