@@ -5,7 +5,12 @@
 using namespace std;
 #include "operate.h"
 
-
+int operate::check(int x){
+    if (x == 0)
+        throw runtime_error("Error");
+    else
+        return x;
+}
 
 int operate::precedence(char op){
     if(op == '+'||op == '-')
@@ -22,9 +27,18 @@ int operate::applyOp(int a, int b, char op){
         case '+': return a + b;
         case '-': return a - b;
         case '*': return a * b;
-        case '/': return a / b;
+        case '/':
+            try {
+                if (check(b))
+                    return a/b;
+            }
+            catch (...) {
+                cout << "Error! Division by ";
+                return 0;
+            }
         case '^': return pow(a,b);
     }
+    return 0;
 }
 
 int operate::evaluate(string tokens){
@@ -80,8 +94,7 @@ int operate::evaluate(string tokens){
 
         else
         {
-            while(!ops.empty() && precedence(ops.top())
-                                  >= precedence(tokens[i])){
+            while(!ops.empty() && precedence(ops.top()) >= precedence(tokens[i])){
                 int val2 = values.top();
                 values.pop();
 

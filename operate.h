@@ -8,6 +8,7 @@
 class operate{
     int precedence(char op);
     int applyOp(int a, int b, char op);
+    int check(int x);
 
 public:
     int evaluate(string tokens);

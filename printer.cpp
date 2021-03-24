@@ -5,8 +5,8 @@
 #include "printer.h"
 
 void printer::help() {
-    printf("For arithmetic operations containing (), /, *, + and -,\ntype the query without putting any space in between the operands and operators.\n"
-           "For example: 18/9*(6+3)-2\n");
+    printf("For arithmetic operations containing ^, (), /, *, + and -,\ntype the query without putting any blank-space in between the operands and operators.\n"
+           "For example: 18/9*(6+3)-2\n\n");
 }
 
 void printer::printWelcome() {
